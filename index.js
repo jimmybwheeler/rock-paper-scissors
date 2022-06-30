@@ -27,15 +27,14 @@ function play(player, comp){
         console.log("Invalid, try again!");
     }
 }
-// figure out how to loop 5 times with prompt and save score
-function game(player, comp){
+
+function game(comp){
     for (let i = 0; i < 5; i++){
-        play(player, comp);
+        const playerSelection = prompt("Rock, paper or scissors?");
+        play(playerSelection, comp);
     }
 }
 
-const playerSelection = prompt("Rock, paper or scissors?");
-
 const computerSelection = computerPlay();
 
-game(playerSelection, computerSelection);
+game(computerSelection);
