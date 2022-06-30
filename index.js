@@ -1,14 +1,15 @@
 function computerPlay(){
     let randomArray = ["Rock", "Paper", "Scissors"];
     let random = Math.floor(Math.random() * randomArray.length);
-    let computerSelection = random;
-    return computerSelection;
+    return random;
 }
 
-function play(){
-    
+function play(player, comp){
+
 }
 
 let playerSelection = prompt("Rock, paper or scissors?")
 
-computerPlay();
+let computerSelection = computerPlay();
+
+play(playerSelection, computerSelection);
