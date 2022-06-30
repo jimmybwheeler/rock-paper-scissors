@@ -27,7 +27,7 @@ function play(player, comp){
         console.log("Invalid, try again!");
     }
 }
-
+// figure out how to loop 5 times with prompt and save score
 function game(player, comp){
     for (let i = 0; i < 5; i++){
         play(player, comp);
