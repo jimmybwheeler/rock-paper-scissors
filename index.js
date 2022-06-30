@@ -23,6 +23,8 @@ function play(player, comp){
         console.log("Scissors beats paper, player wins!");
     } else if (player.toLowerCase() == "scissors" && comp == "2"){
         console.log("Tie!");
+    } else {
+        console.log("Invalid, try again!");
     }
 }
 
