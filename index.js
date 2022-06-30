@@ -30,6 +30,7 @@ function play(player, comp){
 
 function game(comp){
     for (let i = 0; i < 5; i++){
+        // might have to move this back out?
         const playerSelection = prompt("Rock, paper or scissors?");
         play(playerSelection, comp);
     }
