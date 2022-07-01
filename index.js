@@ -28,14 +28,13 @@ function play(player, comp){
     }
 }
 
-function game(comp){
+function game(player, comp){
     for (let i = 0; i < 5; i++){
-        // might have to move this back out?
-        const playerSelection = prompt("Rock, paper or scissors?");
-        play(playerSelection, comp);
+        play(player, comp);
     }
 }
 
+const playerSelection = prompt("Rock, paper or scissors?");
 const computerSelection = computerPlay();
 
-game(computerSelection);
+game(playerSelection, computerSelection);
