@@ -49,8 +49,23 @@ function playRound(player, computer){
     }
 }
 
-const playerChoice = prompt("Rock, paper or scissors?");
-const computerChoice = computerPlay();
-const winner = playRound(playerChoice, computerChoice);
 
-console.log(winner);
+function game(){
+    let playerWinCount = 0;
+    let computerWinCount = 0;
+    for(let i = 0; i < 5; i++){
+        const playerChoice = prompt("Rock, paper or scissors?");
+        const computerChoice = computerPlay();
+        const winner = playRound(playerChoice, computerChoice);
+
+        if(winner == "player wins"){
+            playerWinCount = playerWinCount + 1;
+        } else if(winner == "computer wins"){
+            computerWinCount = computerWinCount + 1;
+        }
+        console.log(playerWinCount);
+        console.log(computerWinCount);
+    }
+}
+
+game();
