@@ -4,5 +4,11 @@ function computerPlay(){
     return random;
 }
 
-let computerChoice = computerPlay();
+function playRound(player, computer){
+    
+}
 
+const playerChoice = prompt("Rock, paper or scissors?");
+const computerChoice = computerPlay();
+
+const winner = playRound(playerChoice, computerChoice);
