@@ -63,9 +63,16 @@ function game(){
         } else if(winner == "computer wins"){
             computerWinCount = computerWinCount + 1;
         }
-        console.log(playerWinCount);
-        console.log(computerWinCount);
     }
+    if(playerWinCount > computerWinCount){
+        console.log("Player wins!");
+    } else if(playerWinCount < computerWinCount){
+        console.log("Computer wins!");
+    } else {
+        console.log("Tie!");
+    }
+    console.log(playerWinCount);
+    console.log(computerWinCount);
 }
 
 game();
