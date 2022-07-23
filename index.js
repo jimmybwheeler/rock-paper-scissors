@@ -6,39 +6,39 @@ function computerPlay(){
 
 function playRound(player, computer){
     let result;
-    if(player.toLowerCase() == "rock" && computer == "0"){
+    if(player == "rock" && computer == "0"){
         console.log("Tie.");
         result = "no winner";
         return result;
-    } else if(player.toLowerCase() == "rock" && computer == "1"){
+    } else if(player == "rock" && computer == "1"){
         console.log("Paper beats rock, computer wins!");
         result = "computer wins";
         return result;
-    } else if(player.toLowerCase() == "rock" && computer == "2"){
+    } else if(player == "rock" && computer == "2"){
         console.log("Rock beats scissors, player wins!");
         result = "player wins";
         return result;
-    } else if(player.toLowerCase() == "paper" && computer == "0"){
+    } else if(player == "paper" && computer == "0"){
         console.log("Paper beats rock, player wins!");
         result = "player wins";
         return result;
-    } else if(player.toLowerCase() == "paper" && computer == "1"){
+    } else if(player == "paper" && computer == "1"){
         console.log("Tie.");
         result = "no winner";
         return result;
-    } else if(player.toLowerCase() == "paper" && computer == "2"){
+    } else if(player == "paper" && computer == "2"){
         console.log("Scissors beats paper, computer wins!");
         result = "computer wins";
         return result;
-    } else if(player.toLowerCase() == "scissors" && computer == "0"){
+    } else if(player == "scissors" && computer == "0"){
         console.log("Rock beats scissors, computer wins!");
         result = "computer wins";
         return result;
-    } else if(player.toLowerCase() == "scissors" && computer == "1"){
+    } else if(player == "scissors" && computer == "1"){
         console.log("Scissors beats paper, player wins!");
         result = "player wins";
         return result;
-    } else if(player.toLowerCase() == "scissors" && computer == "2"){
+    } else if(player == "scissors" && computer == "2"){
         console.log("Tie.");
         result = "no winner";
         return result;
@@ -50,7 +50,7 @@ function playRound(player, computer){
 }
 
 
-function game(){
+/*function game(){
     let playerWinCount = 0;
     let computerWinCount = 0;
     
@@ -75,15 +75,24 @@ function game(){
     console.log(computerWinCount);
 }
 
-game();
+game();*/
 
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
 rockBtn.addEventListener("click", () => {
-    playRound(rock);
-    console.log(result);
+    let player = "rock";
+    let comp = computerPlay();
+    playRound(player, comp);
 });
-paperBtn.addEventListener("click", playRound);
-scissorsBtn.addEventListener("click", playRound);
+paperBtn.addEventListener("click", () => {
+    let player = "paper";
+    let comp = computerPlay();
+    playRound(player, comp);
+});
+scissorsBtn.addEventListener("click", () => {
+    let player = "scissors";
+    let comp = computerPlay();
+    playRound(player, comp);
+});
