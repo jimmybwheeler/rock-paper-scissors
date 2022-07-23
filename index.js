@@ -7,50 +7,50 @@ function computerPlay(){
 function playRound(player, computer){
     let result;
     if(player == "rock" && computer == "0"){
-        console.log("Tie.");
+        div.textContent = "Tie.";
         result = "no winner";
         return result;
     } else if(player == "rock" && computer == "1"){
-        console.log("Paper beats rock, computer wins!");
+        div.textContent = "Paper beats rock, computer wins!";
         result = "computer wins";
         return result;
     } else if(player == "rock" && computer == "2"){
-        console.log("Rock beats scissors, player wins!");
+        div.textContent = "Rock beats scissors, player wins!";
         result = "player wins";
         return result;
     } else if(player == "paper" && computer == "0"){
-        console.log("Paper beats rock, player wins!");
+        div.textContent = "Paper beats rock, player wins!";
         result = "player wins";
         return result;
     } else if(player == "paper" && computer == "1"){
-        console.log("Tie.");
+        div.textContent ="Tie.";
         result = "no winner";
         return result;
     } else if(player == "paper" && computer == "2"){
-        console.log("Scissors beats paper, computer wins!");
+        div.textContent ="Scissors beats paper, computer wins!";
         result = "computer wins";
         return result;
     } else if(player == "scissors" && computer == "0"){
-        console.log("Rock beats scissors, computer wins!");
+        div.textContent ="Rock beats scissors, computer wins!";
         result = "computer wins";
         return result;
     } else if(player == "scissors" && computer == "1"){
-        console.log("Scissors beats paper, player wins!");
+        div.textContent ="Scissors beats paper, player wins!";
         result = "player wins";
         return result;
     } else if(player == "scissors" && computer == "2"){
-        console.log("Tie.");
+        div.textContent = "Tie.";
         result = "no winner";
         return result;
     } else {
-        console.log("Try something else!");
+        div.textContent = "Try something else!";
         result = "wrong input";
         return result;
     }
 }
 
 
-/*function game(){
+function game(){
     let playerWinCount = 0;
     let computerWinCount = 0;
     
@@ -75,7 +75,7 @@ function playRound(player, computer){
     console.log(computerWinCount);
 }
 
-game();*/
+game();
 
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
@@ -96,3 +96,6 @@ scissorsBtn.addEventListener("click", () => {
     let comp = computerPlay();
     playRound(player, comp);
 });
+
+const div = document.querySelector(".result");
+const divScore = document.querySelector(".score");
