@@ -1,3 +1,9 @@
+const div = document.querySelector(".result");
+const divScore = document.querySelector(".score");
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+
 function computerPlay(){
     let choice = ["rock", "paper", "scissors"];
     let random = Math.floor(Math.random() * choice.length);
@@ -50,52 +56,61 @@ function playRound(player, computer){
 }
 
 
-function game(){
+function game(choice, result){
     let playerWinCount = 0;
     let computerWinCount = 0;
     
-        const playerChoice = prompt("Rock, paper or scissors?");
-        const computerChoice = computerPlay();
-        const winner = playRound(playerChoice, computerChoice);
-
-        if(winner == "player wins"){
-            playerWinCount = playerWinCount + 1;
-        } else if(winner == "computer wins"){
-            computerWinCount = computerWinCount + 1;
-        }
     
-    if(playerWinCount > computerWinCount){
-        console.log("Player wins!");
-    } else if(playerWinCount < computerWinCount){
-        console.log("Computer wins!");
-    } else {
-        console.log("Tie!");
+    const winner = result;
+
+    if(winner == "player wins"){
+        playerWinCount = playerWinCount + 1;
+    } else if(winner == "computer wins"){
+        computerWinCount = computerWinCount + 1;
     }
-    console.log(playerWinCount);
-    console.log(computerWinCount);
+
+    divScore.textContent = "player: " + playerWinCount + " " + "computer: " + computerWinCount;
+    
+    /*if(playerWinCount > computerWinCount){
+        divScore.textContent = "Player wins!";
+    } else if(playerWinCount < computerWinCount){
+        divScore.textContent = "Computer wins!";
+    } else {
+        divScore.textContent = "Tie!";
+    }*/
 }
 
-game();
 
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors");
+
+function playerChoice(){
+    rockBtn.onclick = function(){
+        return choice;
+    }
+    paperBtn.onclick = function(){
+        return choice;
+    }
+    scissorsBtn.onclick = function(){
+        return choice;
+    }
+}
+
+let choice = playerChoice();
 
 rockBtn.addEventListener("click", () => {
     let player = "rock";
     let comp = computerPlay();
-    playRound(player, comp);
+    let result = playRound(player, comp);
+    game(choice, result);
 });
 paperBtn.addEventListener("click", () => {
     let player = "paper";
     let comp = computerPlay();
-    playRound(player, comp);
+    let result = playRound(player, comp);
+    game(choice, result);
 });
 scissorsBtn.addEventListener("click", () => {
     let player = "scissors";
     let comp = computerPlay();
-    playRound(player, comp);
+    let result = playRound(player, comp);
+    game(choice, result);
 });
-
-const div = document.querySelector(".result");
-const divScore = document.querySelector(".score");
