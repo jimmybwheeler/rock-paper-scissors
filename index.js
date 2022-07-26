@@ -24,17 +24,17 @@ function playRound(player, computer){
         game(result);
         
     } else if(player == "rock" && computer == "1"){
-        div.textContent = "Paper beats rock, computer wins!";
+        div.textContent = "Paper beats rock, computer wins the round!";
         result = "computer wins";
         game(result);
         
     } else if(player == "rock" && computer == "2"){
-        div.textContent = "Rock beats scissors, player wins!";
+        div.textContent = "Rock beats scissors, player wins the round!";
         result = "player wins";
         game(result);
         
     } else if(player == "paper" && computer == "0"){
-        div.textContent = "Paper beats rock, player wins!";
+        div.textContent = "Paper beats rock, player wins the round!";
         result = "player wins";
         game(result);
         
@@ -44,17 +44,17 @@ function playRound(player, computer){
         game(result);
         
     } else if(player == "paper" && computer == "2"){
-        div.textContent ="Scissors beats paper, computer wins!";
+        div.textContent ="Scissors beats paper, computer wins the round!";
         result = "computer wins";
         game(result);
         
     } else if(player == "scissors" && computer == "0"){
-        div.textContent ="Rock beats scissors, computer wins!";
+        div.textContent ="Rock beats scissors, computer wins the round!";
         result = "computer wins";
         game(result);
         
     } else if(player == "scissors" && computer == "1"){
-        div.textContent ="Scissors beats paper, player wins!";
+        div.textContent ="Scissors beats paper, player wins the round!";
         result = "player wins";
         game(result);
         
@@ -84,12 +84,12 @@ function game(result){
     }
 
     if(playerWinCount == 5){
-        divWinner.textContent = "Player Wins!";
+        divWinner.textContent = "Player wins the game!";
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
     } else if(computerWinCount == 5){
-        divWinner.textContent = "Computer Wins!";
+        divWinner.textContent = "Computer wins the game!";
         rockBtn.disabled = true;
         paperBtn.disabled = true;
         scissorsBtn.disabled = true;
