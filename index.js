@@ -1,10 +1,14 @@
 const div = document.querySelector(".result");
-const divScore = document.querySelector(".score");
+const playerScore = document.querySelector(".playerScore");
+const computerScore = document.querySelector(".computerScore");
+const tieScore = document.querySelector(".tieScore");
+const divWinner = document.querySelector(".divWinner");
 const rockBtn = document.querySelector("#rock");
 const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 let playerWinCount = 0;
 let computerWinCount = 0;
+let tieCount = 0;
 
 function computerPlay(){
     let choice = ["rock", "paper", "scissors"];
@@ -72,20 +76,24 @@ function game(result){
     const winner = result;
 
     if(winner == "player wins"){
-        playerWinCount = playerWinCount + 1;
-        return playerWinCount;
+        playerScore.textContent ="Player Score: " + ++playerWinCount;
     } else if(winner == "computer wins"){
-        computerWinCount = computerWinCount + 1;
-        return computerWinCount;
+        computerScore.textContent ="Computer Score: " +  ++computerWinCount;
+    } else if(winner == "no winner"){
+        tieScore.textContent ="Tie Count: " +  ++tieCount;
     }
-    
-    /*if(playerWinCount > computerWinCount){
-        divScore.textContent = "Player wins!";
-    } else if(playerWinCount < computerWinCount){
-        divScore.textContent = "Computer wins!";
-    } else {
-        divScore.textContent = "Tie!";
-    }*/
+
+    if(playerWinCount == 5){
+        divWinner.textContent = "Player Wins!";
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    } else if(computerWinCount == 5){
+        divWinner.textContent = "Computer Wins!";
+        rockBtn.disabled = true;
+        paperBtn.disabled = true;
+        scissorsBtn.disabled = true;
+    }
 }
 
 
