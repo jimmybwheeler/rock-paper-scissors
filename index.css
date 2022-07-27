@@ -2,7 +2,13 @@
     background-color: orange;
 }
 
+html{
+    height: 100%;
+    padding-top: 200px;
+}
+
 body{
+    min-height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -10,7 +16,6 @@ body{
 .buttons{
     display: flex;
     justify-content: center;
-    border: solid red 2px;
 }
 
 .scores{
